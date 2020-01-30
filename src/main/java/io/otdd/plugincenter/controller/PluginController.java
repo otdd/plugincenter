@@ -30,6 +30,7 @@ public class PluginController extends BaseController{
         PageBeanVo vo = gson.fromJson(body, PageBeanVo.class);
         PageBean<PluginInfo> plugins = pluginService.getPluginList(vo.getPageInfo().getCurrent(),vo.getPageInfo().getPageSize());
         PageBeanVo ret = new PageBeanVo(plugins);
+
         return success(ret);
     }
 
