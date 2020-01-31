@@ -5,6 +5,7 @@ import io.otdd.plugincenter.entity.PageBean;
 import io.otdd.plugincenter.entity.PluginInfo;
 import io.otdd.plugincenter.service.PluginService;
 import io.otdd.plugincenter.vo.PageBeanVo;
+import io.otdd.plugincenter.vo.PluginListQueryVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
@@ -25,13 +26,14 @@ public class PluginController extends BaseController{
 
     @RequestMapping(value = "/getPluginList")
     @ResponseBody
-    public Map<String, Object> getPluginList(@RequestBody String body) {
+//    public Map<String, Object> getPluginList(@RequestBody String body) {
+    public Object getPluginList(@RequestBody String body) {
         Gson gson = new Gson();
-        PageBeanVo vo = gson.fromJson(body, PageBeanVo.class);
-        PageBean<PluginInfo> plugins = pluginService.getPluginList(vo.getPageInfo().getCurrent(),vo.getPageInfo().getPageSize());
-        PageBeanVo ret = new PageBeanVo(plugins);
-
-        return success(ret);
+        PluginListQueryVo vo = gson.fromJson(body, PluginListQueryVo.class);
+        PageBean<PluginInfo> plugins = pluginService.getPluginList(vo.getOtddVersion(),vo.getPageInfo().getCurrent(),vo.getPageInfo().getPageSize());
+//        PageBeanVo ret = new PageBeanVo(plugins);
+        return plugins;
+//        return success(ret);
     }
 
 }
