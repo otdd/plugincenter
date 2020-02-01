@@ -1,0 +1,22 @@
+application:
+  message: hello, otdd
+server:
+  port: 8001
+
+logging:
+  config: classpath:log4j2.xml
+  level:
+    root: INFO
+
+plugin:
+  pluginList:
+    - pluginName: http plugin
+      description: the http plugin.
+      pluginVersion: 0.1.0
+      protocol: http
+      downloadUrl: http://www.otdd.io/static/plugins/ddl-plugin-http-0.0.1-SNAPSHOT-plugin.jar
+    - pluginName: thrift plugin
+      description: the thrift plugin.
+      pluginVersion: 0.1.0
+      protocol: thrift
+      downloadUrl: http://www.otdd.io/static/plugins/ddl-plugin-thrift-0.0.1-SNAPSHOT-plugin.jar

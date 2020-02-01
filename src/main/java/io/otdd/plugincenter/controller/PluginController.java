@@ -26,14 +26,11 @@ public class PluginController extends BaseController{
 
     @RequestMapping(value = "/getPluginList")
     @ResponseBody
-//    public Map<String, Object> getPluginList(@RequestBody String body) {
     public Object getPluginList(@RequestBody String body) {
         Gson gson = new Gson();
         PluginListQueryVo vo = gson.fromJson(body, PluginListQueryVo.class);
         PageBean<PluginInfo> plugins = pluginService.getPluginList(vo.getOtddVersion(),vo.getPageInfo().getCurrent(),vo.getPageInfo().getPageSize());
-//        PageBeanVo ret = new PageBeanVo(plugins);
         return plugins;
-//        return success(ret);
     }
 
 }
