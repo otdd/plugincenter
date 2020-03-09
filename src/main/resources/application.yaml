@@ -10,13 +10,13 @@ logging:
 
 plugin:
   pluginList:
-    - pluginName: http plugin
-      description: the http plugin.
+    - pluginName: otdd http plugin
+      description: the otdd official http plugin. it parses http bytes back and from ddl. supports http/1.0 and http/1.1
       pluginVersion: 0.1.0
       protocol: http
-      downloadUrl: http://www.otdd.io/static/plugins/ddl-plugin-http-0.1.0-SNAPSHOT-plugin.jar
-    - pluginName: thrift plugin
-      description: the thrift plugin.
+      downloadUrl: https://otdd.io/plugins/ddl-plugin-http-0.1.0-plugin.jar
+    - pluginName: otdd thrift plugin
+      description: the otdd official thrift plugin. it parses thrift bytes back and from ddl.
       pluginVersion: 0.1.0
       protocol: thrift
-      downloadUrl: http://www.otdd.io/static/plugins/ddl-plugin-thrift-0.1.0-SNAPSHOT-plugin.jar
+      downloadUrl: https://otdd.io/plugins/ddl-plugin-thrift-0.1.0-plugin.jar
